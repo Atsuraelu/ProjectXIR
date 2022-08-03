@@ -74,8 +74,8 @@ def read_pixel_row(ARRAY, PIXELROW):
 def import_image(image_file: BinaryIO, imageType:str = None, file_directory=None, file_name=None, NewDYTMethod=False):
     print(file_directory)
     print('THE FILE NAME IN QUESTION:', file_name)
-    XIR_Directory = str(os.getcwd()).replace('\\','/')\
-                    + '\\2.92\\scripts\\addons\\XenoverseIR\\temp_dds_storage'.replace('\\','/')
+    XIR_Directory = str(bpy.utils.user_resource('SCRIPTS')).replace('\\', '/') \
+                    + '/addons/ProjectXIR/temp_dds_storage'.replace('\\','/')
     emb_images = Reader(image_file.read(), XIR_Directory) #0 = Image Path  1 = Image Name  2 = file data
     Users = None
     DYTUser = False
