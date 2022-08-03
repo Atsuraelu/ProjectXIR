@@ -5,10 +5,8 @@ import bpy
 
 def install_Pillow():
 	print("[DEBUG] | PIL Library Verification/Location: " + str(os.getenv("APPDATA")).replace('\\', '/') + '/Blender Foundation/Blender/' + bpy.app.version_string[:bpy.app.version_string.rindex('.')] + '/scripts/addons/Project XIR/verifications/PillowInstalled')
-	check = str(os.getenv("APPDATA")).replace('\\', '/') + \
-			'/Blender Foundation/Blender/' + \
-			bpy.app.version_string[:bpy.app.version_string.rindex('.')] + \
-			'/scripts/addons/Project XIR/verifications/PillowInstalled'
+	check = str(bpy.utils.user_resource('SCRIPTS')).replace('\\', '/') \
+            + '/addons/ProjectXIR/verifications/PillowInstalled'.replace('\\', '/')
 	
 	if not os.path.exists(check):
 		# path to python.exe
