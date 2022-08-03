@@ -81,8 +81,8 @@ class dds_prep:
 		return [FinalFileName, DYT_List, Detail_List]
 
 def packing_emb(context, direct, pack_this):
-	XIR_Directory = str(os.getcwd()).replace('\\','/') \
-					+'/2.92/scripts/addons/XenoverseIR/temp_dds_storage'
+	XIR_Directory = str(bpy.utils.user_resource('SCRIPTS')).replace('\\', '/') \
+                    + '/addons/ProjectXIR/temp_dds_storage'.replace('\\','/')
 	print(pack_this)
 	exportImageList = [img.image.name for img in pack_this.images]
 	for img in pack_this.images:
@@ -95,9 +95,8 @@ def packing_emb(context, direct, pack_this):
 			
 	
 def packing_dyt(context, direct, pack_this):
-	XIR_Directory = str(os.getcwd()).replace('\\','/') \
-					+'/2.92/scripts/addons/XenoverseIR/temp_dds_storage'
-
+	XIR_Directory = str(bpy.utils.user_resource('SCRIPTS')).replace('\\', '/') \
+                    + '/addons/ProjectXIR/temp_dds_storage'.replace('\\','/')
 	print(pack_this)
 	exportImageList = [img.image.name for img in pack_this.images]
 	for img in pack_this.images:
